@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  background-color: #282a42;
+  transition: background-color 0.3s ease;
+
+  font-size: 22px;
+
+  color: #eaeaffde;
+}
