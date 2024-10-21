@@ -1,0 +1,19 @@
+{
+  "// singleQuote": "문자열을 표현할 때 Single Quotation를 사용할지 설정",
+  "singleQuote": true,
+
+  "// editor.formatOnSave": "저장 시 자동 포맷팅",
+  "editor.formatOnSave": true,
+
+  "// proseWrap": "텍스트에서 줄바꿈 항상 적용",
+  "proseWrap": "always",
+
+  "// printWidth": "한 줄에 최대 120자",
+  "printWidth": 120,
+
+  "// tabWidth": "들여쓰기 공백 2칸",
+  "tabWidth": 2,
+
+  "// semi": "구문 끝에 세미콜론 추가",
+  "semi": true
+}
