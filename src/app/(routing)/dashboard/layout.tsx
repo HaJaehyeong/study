@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
+import Error from './error';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -10,7 +12,11 @@ type DashboardLayoutProps = {
 };
 
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
-  return <section>{children}</section>;
+  return (
+    <ErrorBoundary errorComponent={Error}>
+      <section>{children}</section>
+    </ErrorBoundary>
+  );
 };
 
 export default DashboardLayout;
