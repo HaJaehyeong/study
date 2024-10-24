@@ -14,9 +14,6 @@ type DashboardTemplateProps = {
  * https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#templates
  */
 const DashboardTemplate: React.FC<DashboardTemplateProps> = ({ children }) => {
-  setTimeout(() => {
-    throw new Error('여기인가?');
-  }, 2000);
   return <div className="template">{children}</div>;
 };
 

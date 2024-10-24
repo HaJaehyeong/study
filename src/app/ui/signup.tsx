@@ -14,7 +14,9 @@ export function Signup() {
     <form action={formAction}>
       <label htmlFor="id">ID</label>
       <input type="text" id="id" name="id" required />
+      <label htmlFor="password">Password</label>
       <input type="password" id="password" name="password" />
+      <label htmlFor="name">Name</label>
       <input type="name" id="name" name="name" />
       <p aria-live="polite">{state?.message}</p>
       <button>Sign up</button>
