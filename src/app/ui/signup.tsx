@@ -1,14 +1,14 @@
 'use client';
 
 import { createUser } from '@/app/actions';
-import { useFormState } from 'react-dom';
+import { useActionState } from 'react';
 
 const initialState = {
   message: 'Hello Mr.My Yesterday time machine을 타고',
 };
 
 export function Signup() {
-  const [state, formAction] = useFormState(createUser, initialState);
+  const [state, formAction] = useActionState(createUser, initialState);
 
   return (
     <form action={formAction}>
