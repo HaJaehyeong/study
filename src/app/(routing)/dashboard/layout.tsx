@@ -3,6 +3,9 @@ import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import Error from './error';
 
+// NOTE(hajae): Client Layout에서 사용할 수 없어서 주석처리 - 기록때문에 남겨 놓음
+// 클라이언트에서 메타데이터를 설정하려면 next/head를 직접 사용하여 <Head> 태그로 넣어야 함 -> 별도 컴포넌트 작성 후 넣어두 됨
+// 예시. https://stackoverflow.com/questions/77969566/nextjs-metadata-in-use-client
 // export const metadata: Metadata = {
 //   title: 'Dashboard',
 //   description: 'This is Dashboard page',
