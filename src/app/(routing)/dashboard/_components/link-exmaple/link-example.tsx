@@ -8,6 +8,7 @@ const LinkExample: React.FC = () => {
   return (
     <>
       <div style={{ height: '100dvh' }}>
+        <Link href={'/dashboard/settings'}>to settings</Link>
         <div>This is Dashboard page &gt;_ &lt;</div>
         <Link className={`link ${pathname === '/dashboard#setting' ? 'active' : ''}`} href="/dashboard#setting">
           &gt;&gt; To Setting
