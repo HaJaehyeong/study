@@ -1,6 +1,7 @@
 'use server';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { API_URL } from './constants/constants';
 
 export type CreateUserState = {
   message: string;
@@ -11,7 +12,7 @@ const createUser = async (prevState: CreateUserState, formData: FormData) => {
   const password = formData.get('password') as string;
   const name = formData.get('name') as string;
 
-  const res = await fetch('http://localhost:3000/api/user', {
+  const res = await fetch(`${API_URL}/api/user`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

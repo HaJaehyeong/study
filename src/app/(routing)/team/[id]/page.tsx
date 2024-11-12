@@ -1,7 +1,8 @@
+import { API_URL } from '@/app/constants/constants';
 import { redirect } from 'next/navigation';
 
 const fetchTeam = async (id: string, password: string) => {
-  const res = await fetch('http://localhost:3000/api/login', {
+  const res = await fetch(`${API_URL}/api/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -13,8 +14,11 @@ const fetchTeam = async (id: string, password: string) => {
   return res.json();
 };
 
-const Profile = async ({ params }: { params: { id: string } }) => {
-  const team = await fetchTeam(params.id, 'PASSWORD');
+type ProfileProps = Promise<{ id: string }>;
+
+const Profile = async (props: { params: ProfileProps }) => {
+  const { id } = await props.params;
+  const team = await fetchTeam(id, 'PASSWORD');
 
   if (!team) {
     /* NOTE(hajae): next.js doc

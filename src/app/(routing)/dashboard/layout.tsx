@@ -1,6 +1,5 @@
 'use client';
 import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
-import { useSelectedLayoutSegment } from 'next/navigation';
 import Error from './error';
 
 // NOTE(hajae): Client Layout에서 사용할 수 없어서 주석처리 - 기록때문에 남겨 놓음
@@ -58,10 +57,10 @@ type DashboardLayoutProps = {
  */
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, team, analytics }) => {
   // NOTE(hajae): 활성 라우트의 세그먼트를 읽을 수 있음
-  const teamSegment = useSelectedLayoutSegment('team');
+  // const teamSegment = useSelectedLayoutSegment('team');
 
   // NOTE(hajae): /dashboard에서는 null, /dashboard/settings에서는 settings
-  console.log('teamSegment: ', teamSegment);
+  // console.log('teamSegment: ', teamSegment);
 
   return (
     <ErrorBoundary errorComponent={Error}>

@@ -1,7 +1,8 @@
 import { Weathers } from '@/app/api/weather/route';
+import { API_URL } from '@/app/constants/constants';
 
 const fetchWeather = async () => {
-  const res = await fetch('http://localhost:3000/api/weather');
+  const res = await fetch(`${API_URL}/api/weather`);
   const data = await res.json();
   return data.weathers;
 };
