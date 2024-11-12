@@ -1,5 +1,5 @@
-import { Weathers } from '@/app/api/weather/route';
-import { API_URL } from '@/app/constants/constants';
+import { Weathers } from '@/app/[lang]/api/weather/route';
+import { API_URL } from '@/app/[lang]/constants/constants';
 
 const fetchWeather = async () => {
   const res = await fetch(`${API_URL}/api/weather`);

@@ -1,4 +1,4 @@
-import { API_URL } from '@/app/constants/constants';
+import { API_URL } from '@/app/[lang]/constants/constants';
 import { redirect } from 'next/navigation';
 
 const fetchTeam = async (id: string, password: string) => {

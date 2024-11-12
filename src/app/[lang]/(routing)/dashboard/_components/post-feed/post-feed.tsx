@@ -1,4 +1,4 @@
-import { API_URL } from '@/app/constants/constants';
+import { API_URL } from '@/app/[lang]/constants/constants';
 import { Suspense, use } from 'react';
 
 const getPosts = async () => {
