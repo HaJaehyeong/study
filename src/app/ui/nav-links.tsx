@@ -20,6 +20,9 @@ export function NavLinks() {
       <Link className={`link ${pathname === '/sort-products' ? 'active' : ''}`} scroll={false} href="/sort-products">
         SortProducts
       </Link>
+      <Link className={`link ${pathname === '/login' ? 'active' : ''}`} scroll={false} href="/login">
+        OpenLoginModal
+      </Link>
     </nav>
   );
 }

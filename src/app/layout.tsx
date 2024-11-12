@@ -9,13 +9,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  auth,
 }: Readonly<{
   children: React.ReactNode;
+  auth: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body>
         <NavLinks />
+        <div>{auth}</div>
         <main>{children}</main>
       </body>
     </html>
