@@ -8,7 +8,7 @@ type HomeProps = {
 };
 
 const Home: React.FC<HomeProps> = async ({ params }) => {
-  const lang = params.lang;
+  const { lang } = await params;
   const dict = await getDictionary(lang);
 
   return (
