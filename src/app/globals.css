@@ -7,3 +7,20 @@ body {
 
   color: #eaeaffde;
 }
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a.active {
+  color: #666cff;
+  font-weight: 700;
+}
+.links {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+  top: 0;
+}
