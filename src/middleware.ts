@@ -52,16 +52,11 @@ function getLocale(request: Request) {
   // NOTE(hajae): accept-language-parser library 사용
   const clientLanguages = acceptLanguage.parse(acceptLanguageHeader);
   const matchedLocale = clientLanguages.find((lang) => {
-    const localeCode = `${lang.code}-${lang.region}`;
+    const localeCode = lang.code;
     return supportedLocales.includes(localeCode) || supportedLocales.includes(lang.code);
   });
 
-  if (matchedLocale) {
-    const localeCode = `${matchedLocale.code}-${matchedLocale.region}`;
-    return supportedLocales.includes(localeCode) ? localeCode : matchedLocale.code;
-  }
-
-  return supportedLocales[0];
+  return matchedLocale ? matchedLocale.code : supportedLocales[0];
 }
 
 export function middleware(request: NextRequest) {
@@ -78,5 +73,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next).*)'],
+  matcher: ['/((?!_next|favicon.ico|sitemap.xml|robots.txt).*)'],
 };
