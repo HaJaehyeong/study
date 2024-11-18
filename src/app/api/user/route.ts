@@ -7,7 +7,7 @@ type CreateUserRequestBody = {
 };
 
 // NOTE(hajae): nextjs routing을 우선하고 있기 때문에 임시로 하드코딩
-export async function POST(req: Request) {
+export const POST = async (req: Request) => {
   try {
     if (req.headers.get('Content-Type') !== 'application/json') {
       // NOTE(hajae): 요청의 Content-Type이 application/json인지 확인
@@ -47,4 +47,34 @@ export async function POST(req: Request) {
     // NOTE(hajae): 기타 예상치 못한 서버 오류 (500 Internal Server Error)
     return NextResponse.json({ error: 'An unexpected error occurred' }, { status: 500 });
   }
-}
+};
+
+export type UsersInfo = UserInfo[];
+
+export type UserInfo = {
+  id: string;
+  name: string;
+  password: string;
+};
+
+const Users: UsersInfo = [
+  {
+    id: 'user1',
+    name: '이유저',
+    password: '1234',
+  },
+  {
+    id: 'user2',
+    name: '삼유저',
+    password: '4321',
+  },
+];
+
+export const GET = async (req: Request) => {
+  try {
+    return NextResponse.json(Users, { status: 200 });
+  } catch (error) {
+    console.error('Error:', error);
+    return NextResponse.json({ error: 'An unexpected error occurred' }, { status: 500 });
+  }
+};

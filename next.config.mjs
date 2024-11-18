@@ -3,6 +3,9 @@
  */
 const nextConfig = {
   reactStrictMode: process.env.NODE_ENV === 'production',
+  experimental: {
+    taint: true,
+  },
   async headers() {
     return [
       {
