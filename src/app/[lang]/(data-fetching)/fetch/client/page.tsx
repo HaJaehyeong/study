@@ -23,6 +23,7 @@ const ClientComponent: React.FC = () => {
     const fetchPosts = async () => {
       // let res = await fetch('https://api.vercel.app/blog');
       // NOTE(hajae): cors error로 인해 vercel posts의 response를 복사 후 신규 API로 작성, 직접 반환하도록 수정
+      // ?: 왜 const를 안쓰고 let을 썼을까.
       let res = await fetch(`${API_URL}/api/vercel/posts`);
       let data: Posts = await res.json();
       setPosts(data);

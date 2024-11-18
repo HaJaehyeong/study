@@ -17,7 +17,7 @@ const delay = (ms: number) => {
 
 export async function GET(req: Request) {
   try {
-    await delay(500);
+    await delay(3000);
 
     return NextResponse.json(
       [
