@@ -5,6 +5,10 @@ const nextConfig = {
   reactStrictMode: process.env.NODE_ENV === 'production',
   experimental: {
     taint: true,
+    // Allowed origins (advanced)
+    // serverActions: {
+    //   allowedOrigins: ['https://localhost:3000'],
+    // },
   },
   async headers() {
     return [
