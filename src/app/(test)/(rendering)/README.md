@@ -190,3 +190,11 @@ const Page: React.FC = () => {
 1. 따라서 `{children}`으로 건내더라도 `Server`은 부모 클라이언트 컴포넌트에 영향을 받아 클라이언트 번들에 포함
 1. 문제 발생하기 전 코드처럼 부모 서버 컴포넌트에서 `Client`를 호출하고 `{children}`으로 `Server`을 건내야 원하는대로 동
    작한다.
+
+> 이유 찾음
+>
+> Client Components는 Server Components 이후에 렌더링되므로, 클라이언트 컴포넌트 모듈에 Server Component를 import할 수없
+> 습니다(이는 서버로의 새로운 요청이 필요함). 대신, Server Component를 props로 Client Component에 전달할 수 있습니다. 아
+> 래의 지원되지 않는 패턴 및 지원되는 패턴 섹션을 참조하세요.
+
+[링크](https://nextjs-ko.org/docs/app/building-your-application/rendering/composition-patterns#unsupported-pattern-importing-server-components-into-client-components)
