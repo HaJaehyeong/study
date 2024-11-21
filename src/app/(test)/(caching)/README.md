@@ -86,3 +86,22 @@ Data Cache를 재검증 또는, 재배포
 <br/><br/><br/>
 
 ## Client-side Router Cache
+
+- 방문한 경로 세그먼트를 캐시하고 사용자가 탐색할 가능성이 있는 경로를 `prefetch`
+- 즉시 뒤로/앞으로 탐색을 가능하게 하고, 탐색 간 전체 페이지 리로드를 없애며, React 상태 및 브라우저 상태를 유지
+
+### Duration
+
+캐시는 브라우저의 임시 메모리에 저장
+
+- Session: 캐시는 탐색 간에 지속, 새로고침 시 지워짐
+- 자동 무효화 기간: 레이아웃 및 로딩 상태의 캐시는 특정 시간이 지나면 자동 무효화.
+  - 기간은 리소스가 prefetched 된 방법에 따라 다름
+  - 기본 프리페칭: (`prefetch={null}` 또는 미지정): 0초
+  - 전체 프리페칭: (`prefetch={true}` 또는 `router.prefetch`): 5분
+
+### Invalidation
+
+- 서버 액션에서: `revalidatePath`, `revalidateTag`, `cookies.set`, `cookies.delete`를 사용. 쿠키는 사용하는 경로가 오래
+  되지 않도록 Router Cache를 무효화함
+- `router.refresh`를 호출
